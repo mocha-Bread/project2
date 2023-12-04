@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.spring.mapper.ImageUploadMapper">
+    <insert id="uploadImage" parameterType="kr.spring.entity.Image">
+        INSERT INTO photo (photo_date, photo_link, user_id) VALUES (#{photo_date}, #{photo_link}, #{user_id})</insert>
+        
+        <insert id="resultUpload" parameterType="kr.spring.entity.result">
+    INSERT INTO result (lesion_code, encodedImage1, lesion_name, user_id, photo_date, photo_link) 
+    VALUES (#{lesion_code}, #{encodedImage1}, #{lesion_name}, #{user_id}, '2023-11-12', #{photo_link})
+</insert>
+
+<!-- <insert id="resultUpload" parameterType="kr.spring.entity.result">
+    INSERT INTO result (lesion_code, encodedImage1, lesion_name, user_id, photo_date, photo_link) 
+    VALUES (#{lesion_code}, #{encodedImage1}, #{lesion_name}, #{user_id}, NOW(),#{photo_link})
+</insert> -->
+</mapper>
+
+
+
